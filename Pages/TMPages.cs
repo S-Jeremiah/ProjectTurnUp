@@ -11,9 +11,10 @@ namespace ProjectTurnUp.Pages
 {
     public class TMPages
     {
-        public void CreateTimeRecord(IWebDriver driver) 
+        public void CreateTimeRecord(IWebDriver driver)
         {
             //Click on Create New button
+            Wait.WaitToBeVisible(driver, "XPath", "//*[@id='container']/p/a", 5);
             IWebElement createNewButton = driver.FindElement(By.XPath("//*[@id=\'container\']/p/a"));
             createNewButton.Click();
             //Select Time from TypeCode dropdown
@@ -24,10 +25,10 @@ namespace ProjectTurnUp.Pages
             timeOption.Click();
             //Type code in the Code textbox
             IWebElement codeTextbox = driver.FindElement(By.Id("Code"));
-            codeTextbox.SendKeys("TimeCode123");
+            codeTextbox.SendKeys("TimeRecord");
             //Type description in the Description textbox
             IWebElement descriptionTextbox = driver.FindElement(By.Id("Description"));
-            descriptionTextbox.SendKeys("This is the description for TimeCode123");
+            descriptionTextbox.SendKeys("This is the description for TimeRecord");
 
 
             //Type price in the Price textbox
@@ -38,17 +39,17 @@ namespace ProjectTurnUp.Pages
             //Click on Save button
             IWebElement saveButton = driver.FindElement(By.Id("SaveButton"));
             saveButton.Click();
-
+            
             //Click on the last record in the table
 
-            Wait.WaitToBeVisible(driver, "XPath", "//*[@id=\"tmsGrid\"]/div[4]/a[4]/span", 2);
-            IWebElement lastRecord = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[4]/a[4]/span"));
-            lastRecord.Click();
-            Thread.Sleep(2000);
-            //Verify the last record is displayed in the form
-            IWebElement lastElement = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[last()]/td[1]"));
-            Assert.That(lastElement.Text, Is.EqualTo("TimeCode123"), "Last record is not displayed in the form.");
+            Wait.WaitToBeClicakable(driver, "XPath", "//*[contains(text(),\"Go to the last page\")]", 4);
+            IWebElement goTOlastRecord = driver.FindElement(By.XPath("//*[contains(text(),\"Go to the last page\")]"));
+            goTOlastRecord.Click();
            
+            Wait.WaitToBeVisible(driver, "XPath", "//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[last()]/td[1]", 4);
+            IWebElement lastElement = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[last()]/td[1]"));
+           Assert.That(lastElement.Text, Is.EqualTo("TimeRecord"), "Last record is not displayed in the form.");
+            
 
 
         }  
@@ -70,7 +71,7 @@ namespace ProjectTurnUp.Pages
             saveBtn.Click();
             //verify the last record is displayed is edited in the form
             
-            Wait.WaitToBeClicakable(driver, "XPath", "//*[@id=\"tmsGrid\"]/div[4]/a[4]/span", 2);
+            Wait.WaitToBeClicakable(driver, "XPath", "//*[@id=\"tmsGrid\"]/div[4]/a[4]/span", 10);
             IWebElement goToLastRecordEdited = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[4]/a[4]/span"));
             goToLastRecordEdited.Click();
             Wait.WaitToBeVisible(driver, "XPath", "//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[last()]/td[1]", 2);
