@@ -4,6 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,12 +16,14 @@ namespace ProjectTurnUp.Utilities
     public class BaseClass
     {
         public IWebDriver driver;
-        [SetUp]
+        [OneTimeSetUp]
         public void SatrtBrowser()
         {
+            
             InitBrowser("Chrome");
           
             driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10); 
 
 
         }
@@ -49,7 +52,7 @@ namespace ProjectTurnUp.Utilities
 
         }
 
-        [TearDown]
+        [OneTimeTearDown]
         public void AfterTest()
         {
             driver.Quit();

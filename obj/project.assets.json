@@ -18,6 +18,15 @@
           }
         }
       },
+      "Cucumber.CucumberExpressions/17.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/CucumberExpressions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/CucumberExpressions.dll": {}
+        }
+      },
       "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
         "type": "package",
         "dependencies": {
@@ -28,6 +37,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/SeleniumExtras.WaitHelpers.dll": {}
+        }
+      },
+      "Gherkin/30.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Gherkin.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Gherkin.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.ApplicationInsights/2.22.0": {
@@ -57,6 +79,22 @@
         "build": {
           "build/netstandard2.0/Microsoft.CodeCoverage.props": {},
           "build/netstandard2.0/Microsoft.CodeCoverage.targets": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyModel/8.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Microsoft.NET.Test.Sdk/17.14.1": {
@@ -670,6 +708,59 @@
           "build/netcoreapp3.1/NUnit3TestAdapter.targets": {}
         }
       },
+      "Reqnroll/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Cucumber.CucumberExpressions": "17.1.0",
+          "Gherkin": "30.0.0",
+          "Microsoft.Extensions.DependencyModel": "8.0.2",
+          "System.Text.Json": "8.0.5"
+        },
+        "compile": {
+          "lib/netstandard2.0/Reqnroll.dll": {
+            "related": ".ExternalAnnotations.xml;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Reqnroll.dll": {
+            "related": ".ExternalAnnotations.xml;.xml"
+          }
+        },
+        "build": {
+          "build/Reqnroll.targets": {}
+        }
+      },
+      "Reqnroll.NUnit/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "NUnit": "3.13.1",
+          "Reqnroll": "[2.4.1]",
+          "Reqnroll.Tools.MsBuild.Generation": "[2.4.1]"
+        },
+        "compile": {
+          "lib/netstandard2.0/Reqnroll.NUnit.ReqnrollPlugin.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Reqnroll.NUnit.ReqnrollPlugin.dll": {}
+        },
+        "build": {
+          "build/Reqnroll.NUnit.props": {},
+          "build/Reqnroll.NUnit.targets": {}
+        }
+      },
+      "Reqnroll.Tools.MsBuild.Generation/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Reqnroll": "[2.4.1]"
+        },
+        "build": {
+          "build/Reqnroll.Tools.MsBuild.Generation.props": {},
+          "build/Reqnroll.Tools.MsBuild.Generation.targets": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Reqnroll.Tools.MsBuild.Generation.props": {}
+        }
+      },
       "Selenium.Support/4.34.0": {
         "type": "package",
         "dependencies": {
@@ -743,6 +834,26 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "System.Configuration.ConfigurationManager/9.0.7": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.EventLog": "9.0.7",
+          "System.Security.Cryptography.ProtectedData": "9.0.7"
+        },
+        "compile": {
+          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
       "System.Diagnostics.DiagnosticSource/5.0.0": {
         "type": "package",
         "compile": {
@@ -753,6 +864,32 @@
         "runtime": {
           "lib/net5.0/System.Diagnostics.DiagnosticSource.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "System.Diagnostics.EventLog/9.0.7": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          },
+          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll": {
+            "assetType": "runtime",
+            "rid": "win"
           }
         }
       },
@@ -796,6 +933,22 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/9.0.7": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
         }
       },
       "System.Security.Principal.Windows/5.0.0": {
@@ -843,6 +996,22 @@
           }
         }
       },
+      "System.Text.Json/8.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/System.Text.Json.targets": {}
+        }
+      },
       "WebDriverManager/2.17.5": {
         "type": "package",
         "dependencies": {
@@ -886,6 +1055,19 @@
         "logo.png"
       ]
     },
+    "Cucumber.CucumberExpressions/17.1.0": {
+      "sha512": "IZFDLLwrUCKuGDXQzmAWZa+kQFpVmVwWD8wEl0UWGOR83UQfzqg8hZeSSNUOXlW0Kh3vMO6kEm3FpNC4amKMaw==",
+      "type": "package",
+      "path": "cucumber.cucumberexpressions/17.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cucumber-mark-green-128.png",
+        "cucumber.cucumberexpressions.17.1.0.nupkg.sha512",
+        "cucumber.cucumberexpressions.nuspec",
+        "lib/netstandard2.0/CucumberExpressions.dll"
+      ]
+    },
     "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
       "sha512": "xc6jVVl5ymgk3ZNWnC/KHxkEup1QpnwYbrwF+NQoCOGERsD8YMlLwmsX4lGhLXCLo/YQTRTIwlKCN9E/doGUNg==",
       "type": "package",
@@ -899,6 +1081,22 @@
         "lib/net40/SeleniumExtras.WaitHelpers.dll",
         "lib/net45/SeleniumExtras.WaitHelpers.dll",
         "lib/netstandard2.0/SeleniumExtras.WaitHelpers.dll"
+      ]
+    },
+    "Gherkin/30.0.0": {
+      "sha512": "jZM9zm9eg62vRSAOtYvcmQh4w0oYqjP6myKxMaJAlQq9VCKm4wnTfHhS5QRnLhx/sH3R5jTaoQAKLs5hhjuq7g==",
+      "type": "package",
+      "path": "gherkin/30.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cucumber-mark-green-128.png",
+        "gherkin.30.0.0.nupkg.sha512",
+        "gherkin.nuspec",
+        "lib/net8.0/Gherkin.dll",
+        "lib/net8.0/Gherkin.xml",
+        "lib/netstandard2.0/Gherkin.dll",
+        "lib/netstandard2.0/Gherkin.xml"
       ]
     },
     "Microsoft.ApplicationInsights/2.22.0": {
@@ -986,6 +1184,36 @@
         "lib/net8.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll",
         "microsoft.codecoverage.17.14.1.nupkg.sha512",
         "microsoft.codecoverage.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.DependencyModel/8.0.2": {
+      "sha512": "mUBDZZRgZrSyFOsJ2qJJ9fXfqd/kXJwf3AiDoqLD9m6TjY5OO/vLNOb9fb4juC0487eq4hcGN/M2Rh/CKS7QYw==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencymodel/8.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyModel.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyModel.targets",
+        "lib/net462/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net462/Microsoft.Extensions.DependencyModel.xml",
+        "lib/net6.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net6.0/Microsoft.Extensions.DependencyModel.xml",
+        "lib/net7.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net7.0/Microsoft.Extensions.DependencyModel.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyModel.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.xml",
+        "microsoft.extensions.dependencymodel.8.0.2.nupkg.sha512",
+        "microsoft.extensions.dependencymodel.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "Microsoft.NET.Test.Sdk/17.14.1": {
@@ -1773,6 +2001,239 @@
         "nunit_256.png"
       ]
     },
+    "Reqnroll/2.4.1": {
+      "sha512": "Ui229q21Kmkrv3L89THgsxGMXooJGK5OrFPLvYDXfE2nO/u4tqYsbmMRddyEE3fsR40IDP++HsRrDxlkR6reVw==",
+      "type": "package",
+      "path": "reqnroll/2.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "LICENSE",
+        "Licenses/Cucumber.CucumberExpressions-LICENSE-MIT.txt",
+        "Licenses/Gherkin-LICENSE-MIT.txt",
+        "Licenses/SpecFlow.Internal.Json-LICENSE-MIT.txt",
+        "README.md",
+        "build/Reqnroll.targets",
+        "images/reqnroll-icon.png",
+        "lib/netstandard2.0/Reqnroll.ExternalAnnotations.xml",
+        "lib/netstandard2.0/Reqnroll.dll",
+        "lib/netstandard2.0/Reqnroll.xml",
+        "reqnroll.2.4.1.nupkg.sha512",
+        "reqnroll.nuspec"
+      ]
+    },
+    "Reqnroll.NUnit/2.4.1": {
+      "sha512": "IbP1uVirMVpopeRwjvtz2b0PO9oQtHcDnAQigTpZY9lxSRYBycQSYQaZ6fbkkg/mG/azkPPGV3YIjNILQ8jWrw==",
+      "type": "package",
+      "path": "reqnroll.nunit/2.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "build/NUnit.AssemblyHooks.cs",
+        "build/NUnit.AssemblyHooks.vb",
+        "build/Reqnroll.NUnit.props",
+        "build/Reqnroll.NUnit.targets",
+        "build/netstandard2.0/Reqnroll.NUnit.Generator.ReqnrollPlugin.dll",
+        "images/reqnroll-icon.png",
+        "lib/netstandard2.0/Reqnroll.NUnit.ReqnrollPlugin.dll",
+        "reqnroll.nunit.2.4.1.nupkg.sha512",
+        "reqnroll.nunit.nuspec"
+      ]
+    },
+    "Reqnroll.Tools.MsBuild.Generation/2.4.1": {
+      "sha512": "+Up0eUWnKRKPdRIttE52DYzwayUd4bGMyRytYeeCwtqwZA4tLhK2NspOZJ8axPcmATOM9QSTCUHUlyp9pgcfQg==",
+      "type": "package",
+      "path": "reqnroll.tools.msbuild.generation/2.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "build/CPS/Buildsystem/CpsExtension.DesignTime.targets",
+        "build/CPS/Buildsystem/Rules/FeatureFileType.xaml",
+        "build/CPS/Buildsystem/Rules/ProjectItemsSchema.xaml",
+        "build/Reqnroll.Tools.MsBuild.Generation.props",
+        "build/Reqnroll.Tools.MsBuild.Generation.targets",
+        "build/Reqnroll.Tools.MsBuild.Generation.tasks",
+        "buildMultiTargeting/Reqnroll.Tools.MsBuild.Generation.props",
+        "images/reqnroll-icon.png",
+        "licenses/Cucumber.CucumberExpressions-LICENSE-MIT.txt",
+        "licenses/Gherkin-LICENSE-MIT.txt",
+        "licenses/SpecFlow.Internal.Json-LICENSE-MIT.txt",
+        "reqnroll.tools.msbuild.generation.2.4.1.nupkg.sha512",
+        "reqnroll.tools.msbuild.generation.nuspec",
+        "tasks/net462/CucumberExpressions.dll",
+        "tasks/net462/Gherkin.dll",
+        "tasks/net462/Microsoft.Bcl.AsyncInterfaces.dll",
+        "tasks/net462/Microsoft.Extensions.DependencyModel.dll",
+        "tasks/net462/Microsoft.NET.StringTools.dll",
+        "tasks/net462/Microsoft.VisualStudio.Composition.dll",
+        "tasks/net462/Microsoft.VisualStudio.Threading.dll",
+        "tasks/net462/Microsoft.VisualStudio.Validation.dll",
+        "tasks/net462/Microsoft.Win32.Primitives.dll",
+        "tasks/net462/Microsoft.Win32.Registry.dll",
+        "tasks/net462/Reqnroll.Generator.dll",
+        "tasks/net462/Reqnroll.Parser.dll",
+        "tasks/net462/Reqnroll.Tools.MsBuild.Generation.dll",
+        "tasks/net462/Reqnroll.Utils.dll",
+        "tasks/net462/Reqnroll.dll",
+        "tasks/net462/System.AppContext.dll",
+        "tasks/net462/System.Buffers.dll",
+        "tasks/net462/System.CodeDom.dll",
+        "tasks/net462/System.Collections.Concurrent.dll",
+        "tasks/net462/System.Collections.Immutable.dll",
+        "tasks/net462/System.Collections.NonGeneric.dll",
+        "tasks/net462/System.Collections.Specialized.dll",
+        "tasks/net462/System.Collections.dll",
+        "tasks/net462/System.ComponentModel.EventBasedAsync.dll",
+        "tasks/net462/System.ComponentModel.Primitives.dll",
+        "tasks/net462/System.ComponentModel.TypeConverter.dll",
+        "tasks/net462/System.ComponentModel.dll",
+        "tasks/net462/System.Composition.AttributedModel.dll",
+        "tasks/net462/System.Composition.Convention.dll",
+        "tasks/net462/System.Composition.Hosting.dll",
+        "tasks/net462/System.Composition.Runtime.dll",
+        "tasks/net462/System.Composition.TypedParts.dll",
+        "tasks/net462/System.Configuration.ConfigurationManager.dll",
+        "tasks/net462/System.Console.dll",
+        "tasks/net462/System.Data.Common.dll",
+        "tasks/net462/System.Diagnostics.Contracts.dll",
+        "tasks/net462/System.Diagnostics.Debug.dll",
+        "tasks/net462/System.Diagnostics.FileVersionInfo.dll",
+        "tasks/net462/System.Diagnostics.Process.dll",
+        "tasks/net462/System.Diagnostics.StackTrace.dll",
+        "tasks/net462/System.Diagnostics.TextWriterTraceListener.dll",
+        "tasks/net462/System.Diagnostics.Tools.dll",
+        "tasks/net462/System.Diagnostics.TraceSource.dll",
+        "tasks/net462/System.Diagnostics.Tracing.dll",
+        "tasks/net462/System.Drawing.Primitives.dll",
+        "tasks/net462/System.Dynamic.Runtime.dll",
+        "tasks/net462/System.Globalization.Calendars.dll",
+        "tasks/net462/System.Globalization.Extensions.dll",
+        "tasks/net462/System.Globalization.dll",
+        "tasks/net462/System.IO.Compression.ZipFile.dll",
+        "tasks/net462/System.IO.Compression.dll",
+        "tasks/net462/System.IO.FileSystem.DriveInfo.dll",
+        "tasks/net462/System.IO.FileSystem.Primitives.dll",
+        "tasks/net462/System.IO.FileSystem.Watcher.dll",
+        "tasks/net462/System.IO.FileSystem.dll",
+        "tasks/net462/System.IO.IsolatedStorage.dll",
+        "tasks/net462/System.IO.MemoryMappedFiles.dll",
+        "tasks/net462/System.IO.Pipes.dll",
+        "tasks/net462/System.IO.UnmanagedMemoryStream.dll",
+        "tasks/net462/System.IO.dll",
+        "tasks/net462/System.Linq.Expressions.dll",
+        "tasks/net462/System.Linq.Parallel.dll",
+        "tasks/net462/System.Linq.Queryable.dll",
+        "tasks/net462/System.Linq.dll",
+        "tasks/net462/System.Memory.dll",
+        "tasks/net462/System.Net.Http.dll",
+        "tasks/net462/System.Net.NameResolution.dll",
+        "tasks/net462/System.Net.NetworkInformation.dll",
+        "tasks/net462/System.Net.Ping.dll",
+        "tasks/net462/System.Net.Primitives.dll",
+        "tasks/net462/System.Net.Requests.dll",
+        "tasks/net462/System.Net.Security.dll",
+        "tasks/net462/System.Net.Sockets.dll",
+        "tasks/net462/System.Net.WebHeaderCollection.dll",
+        "tasks/net462/System.Net.WebSockets.Client.dll",
+        "tasks/net462/System.Net.WebSockets.dll",
+        "tasks/net462/System.Numerics.Vectors.dll",
+        "tasks/net462/System.ObjectModel.dll",
+        "tasks/net462/System.Reflection.Extensions.dll",
+        "tasks/net462/System.Reflection.Metadata.dll",
+        "tasks/net462/System.Reflection.Primitives.dll",
+        "tasks/net462/System.Reflection.dll",
+        "tasks/net462/System.Resources.Reader.dll",
+        "tasks/net462/System.Resources.ResourceManager.dll",
+        "tasks/net462/System.Resources.Writer.dll",
+        "tasks/net462/System.Runtime.CompilerServices.Unsafe.dll",
+        "tasks/net462/System.Runtime.CompilerServices.VisualC.dll",
+        "tasks/net462/System.Runtime.Extensions.dll",
+        "tasks/net462/System.Runtime.Handles.dll",
+        "tasks/net462/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "tasks/net462/System.Runtime.InteropServices.dll",
+        "tasks/net462/System.Runtime.Numerics.dll",
+        "tasks/net462/System.Runtime.Serialization.Formatters.dll",
+        "tasks/net462/System.Runtime.Serialization.Json.dll",
+        "tasks/net462/System.Runtime.Serialization.Primitives.dll",
+        "tasks/net462/System.Runtime.Serialization.Xml.dll",
+        "tasks/net462/System.Runtime.dll",
+        "tasks/net462/System.Security.AccessControl.dll",
+        "tasks/net462/System.Security.Claims.dll",
+        "tasks/net462/System.Security.Cryptography.Algorithms.dll",
+        "tasks/net462/System.Security.Cryptography.Csp.dll",
+        "tasks/net462/System.Security.Cryptography.Encoding.dll",
+        "tasks/net462/System.Security.Cryptography.Primitives.dll",
+        "tasks/net462/System.Security.Cryptography.X509Certificates.dll",
+        "tasks/net462/System.Security.Principal.Windows.dll",
+        "tasks/net462/System.Security.Principal.dll",
+        "tasks/net462/System.Security.SecureString.dll",
+        "tasks/net462/System.Text.Encoding.CodePages.dll",
+        "tasks/net462/System.Text.Encoding.Extensions.dll",
+        "tasks/net462/System.Text.Encoding.dll",
+        "tasks/net462/System.Text.Encodings.Web.dll",
+        "tasks/net462/System.Text.Json.dll",
+        "tasks/net462/System.Text.RegularExpressions.dll",
+        "tasks/net462/System.Threading.Overlapped.dll",
+        "tasks/net462/System.Threading.Tasks.Dataflow.dll",
+        "tasks/net462/System.Threading.Tasks.Extensions.dll",
+        "tasks/net462/System.Threading.Tasks.Parallel.dll",
+        "tasks/net462/System.Threading.Tasks.dll",
+        "tasks/net462/System.Threading.Thread.dll",
+        "tasks/net462/System.Threading.ThreadPool.dll",
+        "tasks/net462/System.Threading.Timer.dll",
+        "tasks/net462/System.Threading.dll",
+        "tasks/net462/System.ValueTuple.dll",
+        "tasks/net462/System.Xml.ReaderWriter.dll",
+        "tasks/net462/System.Xml.XDocument.dll",
+        "tasks/net462/System.Xml.XPath.XDocument.dll",
+        "tasks/net462/System.Xml.XPath.dll",
+        "tasks/net462/System.Xml.XmlDocument.dll",
+        "tasks/net462/System.Xml.XmlSerializer.dll",
+        "tasks/net462/netstandard.dll",
+        "tasks/netstandard2.0/CucumberExpressions.dll",
+        "tasks/netstandard2.0/Gherkin.dll",
+        "tasks/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "tasks/netstandard2.0/Microsoft.Extensions.DependencyModel.dll",
+        "tasks/netstandard2.0/Microsoft.NET.StringTools.dll",
+        "tasks/netstandard2.0/Microsoft.VisualStudio.Composition.dll",
+        "tasks/netstandard2.0/Microsoft.VisualStudio.Threading.dll",
+        "tasks/netstandard2.0/Microsoft.VisualStudio.Validation.dll",
+        "tasks/netstandard2.0/Microsoft.Win32.Registry.dll",
+        "tasks/netstandard2.0/Reqnroll.Generator.dll",
+        "tasks/netstandard2.0/Reqnroll.Parser.dll",
+        "tasks/netstandard2.0/Reqnroll.Tools.MsBuild.Generation.deps.json",
+        "tasks/netstandard2.0/Reqnroll.Tools.MsBuild.Generation.dll",
+        "tasks/netstandard2.0/Reqnroll.Utils.dll",
+        "tasks/netstandard2.0/Reqnroll.dll",
+        "tasks/netstandard2.0/System.Buffers.dll",
+        "tasks/netstandard2.0/System.CodeDom.dll",
+        "tasks/netstandard2.0/System.Collections.Immutable.dll",
+        "tasks/netstandard2.0/System.ComponentModel.Composition.dll",
+        "tasks/netstandard2.0/System.Composition.AttributedModel.dll",
+        "tasks/netstandard2.0/System.Composition.Convention.dll",
+        "tasks/netstandard2.0/System.Composition.Hosting.dll",
+        "tasks/netstandard2.0/System.Composition.Runtime.dll",
+        "tasks/netstandard2.0/System.Composition.TypedParts.dll",
+        "tasks/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "tasks/netstandard2.0/System.Memory.dll",
+        "tasks/netstandard2.0/System.Numerics.Vectors.dll",
+        "tasks/netstandard2.0/System.Reflection.Emit.ILGeneration.dll",
+        "tasks/netstandard2.0/System.Reflection.Emit.dll",
+        "tasks/netstandard2.0/System.Reflection.Metadata.dll",
+        "tasks/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "tasks/netstandard2.0/System.Security.AccessControl.dll",
+        "tasks/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "tasks/netstandard2.0/System.Security.Principal.Windows.dll",
+        "tasks/netstandard2.0/System.Text.Encoding.CodePages.dll",
+        "tasks/netstandard2.0/System.Text.Encodings.Web.dll",
+        "tasks/netstandard2.0/System.Text.Json.dll",
+        "tasks/netstandard2.0/System.Threading.Tasks.Dataflow.dll",
+        "tasks/netstandard2.0/System.Threading.Tasks.Extensions.dll"
+      ]
+    },
     "Selenium.Support/4.34.0": {
       "sha512": "+GROvBcro1ayU9PlGu4Q6xGyRk+wlbwGrmL3lZqm+s6T+NVs0Fmp2r8t6DvKMY/ZaDh9svkvxqN808+EnFPhDw==",
       "type": "package",
@@ -1903,6 +2364,34 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Configuration.ConfigurationManager/9.0.7": {
+      "sha512": "T8Q/AkI7hL82+O/ARCAKrVliQOPtMtYuv+4SFVhkXVo8dwPll4y3Ls0T1RIbuspNYxC1uL1zfa3sckOveVNlSg==",
+      "type": "package",
+      "path": "system.configuration.configurationmanager/9.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Configuration.ConfigurationManager.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Configuration.ConfigurationManager.targets",
+        "lib/net462/System.Configuration.ConfigurationManager.dll",
+        "lib/net462/System.Configuration.ConfigurationManager.xml",
+        "lib/net8.0/System.Configuration.ConfigurationManager.dll",
+        "lib/net8.0/System.Configuration.ConfigurationManager.xml",
+        "lib/net9.0/System.Configuration.ConfigurationManager.dll",
+        "lib/net9.0/System.Configuration.ConfigurationManager.xml",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.xml",
+        "system.configuration.configurationmanager.9.0.7.nupkg.sha512",
+        "system.configuration.configurationmanager.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Diagnostics.DiagnosticSource/5.0.0": {
       "sha512": "tCQTzPsGZh/A9LhhA6zrqCRV4hOHsK90/G7q3Khxmn6tnB1PuNU0cRaKANP2AWcF9bn0zsuOoZOSrHuJk6oNBA==",
       "type": "package",
@@ -1929,6 +2418,40 @@
         "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.Diagnostics.EventLog/9.0.7": {
+      "sha512": "AJ+9fyCtQUImntxAJ9l4PZiCd4iepuk4pm7Qcno7PBIWQnfXlvwKuFsGk2H+QyY69GUVzDP2heELW6ho5BCXUg==",
+      "type": "package",
+      "path": "system.diagnostics.eventlog/9.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Diagnostics.EventLog.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Diagnostics.EventLog.targets",
+        "lib/net462/System.Diagnostics.EventLog.dll",
+        "lib/net462/System.Diagnostics.EventLog.xml",
+        "lib/net8.0/System.Diagnostics.EventLog.dll",
+        "lib/net8.0/System.Diagnostics.EventLog.xml",
+        "lib/net9.0/System.Diagnostics.EventLog.dll",
+        "lib/net9.0/System.Diagnostics.EventLog.xml",
+        "lib/netstandard2.0/System.Diagnostics.EventLog.dll",
+        "lib/netstandard2.0/System.Diagnostics.EventLog.xml",
+        "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll",
+        "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll",
+        "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.xml",
+        "runtimes/win/lib/net9.0/System.Diagnostics.EventLog.Messages.dll",
+        "runtimes/win/lib/net9.0/System.Diagnostics.EventLog.dll",
+        "runtimes/win/lib/net9.0/System.Diagnostics.EventLog.xml",
+        "system.diagnostics.eventlog.9.0.7.nupkg.sha512",
+        "system.diagnostics.eventlog.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Reflection.Metadata/8.0.0": {
@@ -2006,6 +2529,40 @@
         "system.security.accesscontrol.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.Security.Cryptography.ProtectedData/9.0.7": {
+      "sha512": "OAiDZTyzIzgbtrjzbMlprCxvlXpFW7q+JVOSEc/v4jgLBF4hVSey0MQ06MyctGjspKyJBdGj6k6MuqjiZV9c5Q==",
+      "type": "package",
+      "path": "system.security.cryptography.protecteddata/9.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Cryptography.ProtectedData.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.ProtectedData.targets",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net462/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net462/System.Security.Cryptography.ProtectedData.xml",
+        "lib/net8.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net8.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/net9.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net9.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "system.security.cryptography.protecteddata.9.0.7.nupkg.sha512",
+        "system.security.cryptography.protecteddata.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Security.Principal.Windows/5.0.0": {
@@ -2105,6 +2662,79 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Text.Json/8.0.5": {
+      "sha512": "0f1B50Ss7rqxXiaBJyzUu9bWFOO2/zSlifZ/UNMdiIpDYe4cY4LQQicP4nirK1OS31I43rn062UIJ1Q9bpmHpg==",
+      "type": "package",
+      "path": "system.text.json/8.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/roslyn3.11/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn3.11/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.0/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/System.Text.Json.SourceGeneration.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll",
+        "buildTransitive/net461/System.Text.Json.targets",
+        "buildTransitive/net462/System.Text.Json.targets",
+        "buildTransitive/net6.0/System.Text.Json.targets",
+        "buildTransitive/netcoreapp2.0/System.Text.Json.targets",
+        "buildTransitive/netstandard2.0/System.Text.Json.targets",
+        "lib/net462/System.Text.Json.dll",
+        "lib/net462/System.Text.Json.xml",
+        "lib/net6.0/System.Text.Json.dll",
+        "lib/net6.0/System.Text.Json.xml",
+        "lib/net7.0/System.Text.Json.dll",
+        "lib/net7.0/System.Text.Json.xml",
+        "lib/net8.0/System.Text.Json.dll",
+        "lib/net8.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.8.0.5.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "WebDriverManager/2.17.5": {
       "sha512": "gxCxFF+SxBdb1/oC0WNIPZkxT/WsfKcw4rHsB266f/fJbEmvsEIn/CodTreDIdgkB1nPlRK4qw7SE0wIcKyiBQ==",
       "type": "package",
@@ -2127,10 +2757,13 @@
       "Microsoft.NET.Test.Sdk >= 17.14.1",
       "NUnit >= 4.3.2",
       "NUnit3TestAdapter >= 5.0.0",
+      "Reqnroll >= 2.4.1",
+      "Reqnroll.NUnit >= 2.4.1",
       "Selenium.Support >= 4.34.0",
       "Selenium.WebDriver >= 4.34.0",
       "Selenium.WebDriver.ChromeDriver >= 138.0.7204.9400",
       "Selenium.WebDriver.MSEdgeDriver >= 138.0.3351.65",
+      "System.Configuration.ConfigurationManager >= 9.0.7",
       "WebDriverManager >= 2.17.5"
     ]
   },
@@ -2200,6 +2833,14 @@
             "target": "Package",
             "version": "[5.0.0, )"
           },
+          "Reqnroll": {
+            "target": "Package",
+            "version": "[2.4.1, )"
+          },
+          "Reqnroll.NUnit": {
+            "target": "Package",
+            "version": "[2.4.1, )"
+          },
           "Selenium.Support": {
             "target": "Package",
             "version": "[4.34.0, )"
@@ -2215,6 +2856,10 @@
           "Selenium.WebDriver.MSEdgeDriver": {
             "target": "Package",
             "version": "[138.0.3351.65, )"
+          },
+          "System.Configuration.ConfigurationManager": {
+            "target": "Package",
+            "version": "[9.0.7, )"
           },
           "WebDriverManager": {
             "target": "Package",

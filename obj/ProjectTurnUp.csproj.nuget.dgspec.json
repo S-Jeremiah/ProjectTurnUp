@@ -66,6 +66,14 @@
               "target": "Package",
               "version": "[5.0.0, )"
             },
+            "Reqnroll": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "Reqnroll.NUnit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
             "Selenium.Support": {
               "target": "Package",
               "version": "[4.34.0, )"
@@ -81,6 +89,10 @@
             "Selenium.WebDriver.MSEdgeDriver": {
               "target": "Package",
               "version": "[138.0.3351.65, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.7, )"
             },
             "WebDriverManager": {
               "target": "Package",

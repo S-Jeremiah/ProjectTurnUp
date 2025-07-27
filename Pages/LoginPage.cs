@@ -9,11 +9,13 @@ namespace ProjectTurnUp.Pages
 {
     public class LoginPage
     {
+
         public void LoginAction(IWebDriver driver)
         {
             
             // launch the website
             driver.Navigate().GoToUrl("http://horse.industryconnect.io/");
+            driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(10);
 
             // Identigy the username testbox and enter valid username
             IWebElement usernameField = driver.FindElement(By.Id("UserName"));

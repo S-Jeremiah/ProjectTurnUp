@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.DevTools.V136.WebAuthn;
+using OpenQA.Selenium.Support.UI;
 using ProjectTurnUp.Utilities;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace ProjectTurnUp.Pages
         public void CreateEmployee(IWebDriver driver)
         {
             // Click on Create New button
+            Wait.WaitToBeVisible(driver, "XPath", "//*[@id=\"container\"]/p/a", 2);
             IWebElement createNewButton = driver.FindElement(By.XPath("//*[@id=\"container\"]/p/a"));
             createNewButton.Click();
             // Fill in employee details
@@ -44,7 +46,8 @@ namespace ProjectTurnUp.Pages
             IWebElement groupname = driver.FindElement(By.XPath("//*[@id=\"UserEditForm\"]/div/div[8]/div/div/div[1]/input"));
             groupname.SendKeys("asb");
 
-            Thread.Sleep(3000); 
+            
+            Wait.WaitToBeVisible(driver,"XPath"," //ul[@id='groupList_listbox']", 2);
 
             IList <IWebElement> options = driver.FindElements(By.CssSelector(".k-item"));
 
@@ -62,6 +65,8 @@ namespace ProjectTurnUp.Pages
             
             IWebElement saveButton = driver.FindElement(By.Id("SaveButton"));
             saveButton.Click();
+           //Thread.Sleep(2000); // Wait for the save operation to complete
+
 
             Wait.WaitToBeVisible(driver, "XPath", "//*[@id='container']/div/a", 2);
             IWebElement backToListButton = driver.FindElement(By.XPath("//*[@id='container']/div/a"));
@@ -72,6 +77,7 @@ namespace ProjectTurnUp.Pages
             IWebElement lastPageEmployee = driver.FindElement(By.XPath("//*[@id=\"usersGrid\"]/div[4]/a[4]/span"));
             lastPageEmployee.Click();
             Wait.WaitToBeClicakable(driver, "XPath", "//*[@id=\"usersGrid\"]/div[3]/table/tbody/tr[last()]/td[1]", 3);
+          
             IWebElement lastEmployeeRecord = driver.FindElement(By.XPath("//*[@id=\"usersGrid\"]/div[3]/table/tbody/tr[last()]/td[1]"));
             Assert.That(lastEmployeeRecord.Text, Is.EqualTo("Mindy"), "Last employee record is not created successfully.");
 
@@ -88,10 +94,12 @@ namespace ProjectTurnUp.Pages
             editContactbox.SendKeys("Philippines");
             IWebElement editSaveButton = driver.FindElement(By.XPath("//*[@id=\"SaveButton\"]"));
             editSaveButton.Click();
-            
+            //Thread.Sleep(2000); // Wait for the save operation to complete
+
 
             // Verify the employee is edited
-            Wait.WaitToBeClicakable(driver, "XPath", "//*[@id=\"container\"]/div/a", 3);
+           // Wait.WaitToBeClicakable(driver, "XPath", "//*[@id=\"container\"]/div/a", 10);
+           
             IWebElement backToEditList= driver.FindElement(By.XPath("//*[@id=\"container\"]/div/a"));
             backToEditList.Click();
 
