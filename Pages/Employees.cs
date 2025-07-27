@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.DevTools.V136.WebAuthn;
+using OpenQA.Selenium.Support.UI;
 using ProjectTurnUp.Utilities;
 using System;
 using System.Collections.Generic;
@@ -64,6 +65,8 @@ namespace ProjectTurnUp.Pages
             
             IWebElement saveButton = driver.FindElement(By.Id("SaveButton"));
             saveButton.Click();
+           //Thread.Sleep(2000); // Wait for the save operation to complete
+
 
             Wait.WaitToBeVisible(driver, "XPath", "//*[@id='container']/div/a", 2);
             IWebElement backToListButton = driver.FindElement(By.XPath("//*[@id='container']/div/a"));
@@ -91,10 +94,12 @@ namespace ProjectTurnUp.Pages
             editContactbox.SendKeys("Philippines");
             IWebElement editSaveButton = driver.FindElement(By.XPath("//*[@id=\"SaveButton\"]"));
             editSaveButton.Click();
-            
+            //Thread.Sleep(2000); // Wait for the save operation to complete
+
 
             // Verify the employee is edited
-            Wait.WaitToBeClicakable(driver, "XPath", "//*[@id=\"container\"]/div/a", 3);
+           // Wait.WaitToBeClicakable(driver, "XPath", "//*[@id=\"container\"]/div/a", 10);
+           
             IWebElement backToEditList= driver.FindElement(By.XPath("//*[@id=\"container\"]/div/a"));
             backToEditList.Click();
 

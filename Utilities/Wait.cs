@@ -12,7 +12,7 @@ namespace ProjectTurnUp.Utilities
     {
         public static void WaitToBeClicakable(IWebDriver driver, string locatorType, string locatorValue, int seconds)
         { 
-         var wait = new WebDriverWait(driver, new TimeSpan(0, 0, 10));
+         var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
 
             if (locatorType == "XPath")
             {
@@ -25,7 +25,7 @@ namespace ProjectTurnUp.Utilities
         }
         public static void WaitToBeVisible(IWebDriver driver, string locatorType, string locatorValue, int seconds)
         {
-            var wait = new WebDriverWait(driver, new TimeSpan(0, 0, 10));
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
             if (locatorType == "XPath")
             {
                 wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(locatorValue)));
@@ -34,6 +34,18 @@ namespace ProjectTurnUp.Utilities
             {
                 wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id(locatorValue)));
             }
+        }
+
+        public static void WaitForGridToLoad(IWebDriver driver, int seconds)
+        {
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
+
+            wait.Until(d =>
+            {
+                var rows = d.FindElements(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr"));
+                // Check if at least one row is visible in the grid
+                return rows.Count > 0 && rows.All(row => row.Displayed);
+            });
         }
     }
 }
